@@ -372,7 +372,14 @@ func findHelperFuncs(in *ast.File, helperFunctionReturnMap map[string][]string, 
 	}
 }
 
+func demonstration() {
+	fmt.Println("this function is called by analyze")
+}
+
+
 func analyze(analyzePackage string) TarpReport {
+	demonstration()
+
 	gopath := os.Getenv("GOPATH")
 
 	pkgDir := strings.Join([]string{gopath, "src", analyzePackage}, "/")
